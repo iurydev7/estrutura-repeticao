@@ -27,3 +27,81 @@ function menorEMaiorAltura() {
     }
     alert(`A maior altura é: ${maior} metros e a menor altura é: ${menor} metros`)
 }
+
+function mediaAritmetica() {
+    let soma = 0;
+    let positivos = 0;
+    let negativos = 0;
+    let quantidade = 0;
+    let valor = 10;
+
+    while (valor >= -7) {
+        console.log("valor: " + valor);
+        soma += valor;
+        console.log("soma: " + soma);
+        quantidade++
+
+        console.log(quantidade)
+
+        if (valor > 0) {
+            positivos++
+        } else if (valor < 0) {
+            negativos++
+        }
+        valor -= 1;
+    }
+    console.log(`
+        Acumulado: ${soma}
+        Média: ${(soma / quantidade).toFixed(2)}
+        Percentual Positivo: ${(positivos * 100 / quantidade).toFixed(2)}
+        Percentual Negativo: ${(negativos * 100 / quantidade).toFixed(2)}
+        `)
+}
+
+function quantidadeNosIntervalos(){
+
+}
+
+function algoritmoEstruturado(){
+    let valores = {
+        primeiro: 3,
+        segundo: 8,
+        terceiro: 11,
+        quarto: 12,
+        encerramento: 0
+    }
+
+    let par = 0;
+    let impar = 0;
+    let somaGeral = 0;
+    let somaPares = 0;
+    let quantidade = 0;
+
+    for(chave in valores){
+        let valor = valores[chave];
+
+        if(valor === 0){
+            break;
+        }
+
+        quantidade ++
+        somaGeral += valor;
+
+        if( valor % 2 === 0 ){
+            par++
+            somaPares += valor;
+        } else {
+            impar++
+        }
+
+    }
+    let mediaPares = somaPares / par;
+    let mediaGeral = somaGeral / quantidade;
+    console.log(`
+        Quantidade de pares: ${par}
+        Quantidade de impares: ${impar}
+        Média de pares: ${mediaPares}
+        Média geral: ${mediaGeral}
+        
+        `)
+}
